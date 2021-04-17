@@ -1,9 +1,10 @@
 .tttcontainer {
     border: 1px solid black;
-    width: 75%;
+    width: 50%;
     margin: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     text-align: center;
     font-family: Consolas;
     font-size: large;
@@ -12,7 +13,7 @@
 }
 
 .tttcontainer div {
-    padding: 20px;
+    padding: 10px;
     width: 50%;
     margin: auto;
     display: flex;
@@ -55,11 +56,16 @@ button:hover {
     box-shadow: 1px 1px 5px black;
 }
 
+button:disabled {
+    box-shadow: none;
+}
+
 body {
     background-color: blanchedalmond;
 }
 
 table {
+    padding: 20px;
     width: 50%;
     margin: auto;
 }

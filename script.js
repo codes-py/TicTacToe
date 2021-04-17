@@ -97,9 +97,9 @@ function playAgain() {
         btns[i].className = 'btn'
         btns[i].textContent = ''
         btns[i].disabled = false;
-        ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-        clickCount = 0;
-        preWinner = winner
-        winner = undefined;
     }
+    ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    clickCount = 0;
+    preWinner = winner;
+    winner = undefined;
 }
