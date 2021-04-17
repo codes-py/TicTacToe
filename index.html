@@ -11,44 +11,51 @@
         <h2>Tic Tac Toe</h2>
 
         <div id="row1" class="tttrow">
-            <button id="col1" onclick="buttonClick(this)"></button>
-            <button id="col2" onclick="buttonClick(this)"></button>
-            <button id="col3" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col1" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col2" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col3" onclick="buttonClick(this)"></button>
         </div>
         
         <div id="row2" class="tttrow">
-            <button id="col1" onclick="buttonClick(this)"></button>
-            <button id="col2" onclick="buttonClick(this)"></button>
-            <button id="col3" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col1" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col2" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col3" onclick="buttonClick(this)"></button>
         </div>
 
         <div id="row3" class="tttrow">
-            <button id="col1" onclick="buttonClick(this)"></button>
-            <button id="col2" onclick="buttonClick(this)"></button>
-            <button id="col3" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col1" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col2" onclick="buttonClick(this)"></button>
+            <button class="btn"id="col3" onclick="buttonClick(this)"></button>
         </div>
 
         <table>
             <tr>
+                <th>Player</th>
                 <th>Wins</th>
                 <th>Losses</th>
                 <th>Draws</th>
             </tr>
             
-            <tr>
-                <td>Player 1</td>
-                <td><span>0</span></td>
-                <td><span>0</span></td>
+            <tr id="Player 1">
+                <td>1</td>
+                <td name="wins">0</td>
+                <td name="losses">0</td>
+                <td name="draws">0</td>
             </tr>
             
-            <tr>
-                <td>Player 2</td>
-                <td><span>0</span></td>
-                <td><span>0</span></td>
+            <tr id="Player 2">
+                <td>2</td>
+                <td name="wins">0</td>
+                <td name="losses">0</td>
+                <td name="draws">0</td>
             </tr>
 
         </table>
 
+        <div>
+            <button class="btn-play" onclick="playAgain()">Play Again</button>
+        </div>
+        <h2 id="res"></h2>
     </div>
     <script src="script.js"></script>
 </body>

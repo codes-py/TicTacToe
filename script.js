@@ -1,20 +1,30 @@
 let ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 var clickCount = 0;
+let winner, preWinner;
 const players = ['X', 'O'];
 const color = ['red', 'blue'];
+let streak = 0;
+
+let btns = document.getElementsByTagName('button');
+let p1 = document.getElementById('Player 1');
+let p2 = document.getElementById('Player 2');
+let container = document.getElementById('ttt');
+let res = document.getElementById('res');
 
 function buttonClick(btn) {
     let pos = [btn.parentElement.id[btn.parentElement.id.length - 1] - 1,
                 btn.id[btn.id.length - 1] - 1
             ];
     ttt[pos[0]][pos[1]] = players[clickCount % 2];
-    btn.style.background = color[clickCount % 2];
+    btn.className = `btn-${color[clickCount % 2]}`;
     btn.append(ttt[pos[0]][pos[1]]);
     btn.disabled = true;
     clickCount++;
-    let winner = decideWinner();
-    if (winner)
-        finishGame(`Winner is ${winner}`)
+    winner = decideWinner();
+    if (winner) {
+        updateScores();
+        finishGame(`Winner is ${winner}`);
+    }
 }
 
 function decideWinner() {
@@ -47,18 +57,49 @@ function decideWinner() {
                 return 'Player 2';        
     }
 
-    if (clickCount === 9)
-            finishGame('Game Draw');
+    if (clickCount === 9) {
+        winner = undefined;
+        updateScores();
+        finishGame('Game Draw');
+    }
 }
 
-function finishGame(winner) {
-    let res = document.createElement('h2')
-    res.append(winner);
-    
-    let container = document.getElementById('ttt');
-    container.appendChild(res);
+function updateScores() {
+    if (preWinner === winner)
+        streak += 1
+    else
+        streak = 1
 
-    let btns = document.getElementsByTagName('button');
-    for (let i = 0; i < btns.length; i++)
+    if (winner === 'Player 1') {
+        p1.children.wins.textContent = Number(p1.children.wins.textContent) + 1;
+        p2.children.losses.textContent = Number(p2.children.losses.textContent) + 1;
+    }
+    else if (winner === 'Player 2') {
+        p2.children.wins.textContent = Number(p2.children.wins.textContent) + 1;
+        p1.children.losses.textContent = Number(p1.children.losses.textContent) + 1;
+    }
+    else {
+        p1.children.draws.textContent = Number(p1.children.draws.textContent) + 1;
+        p2.children.draws.textContent = Number(p2.children.draws.textContent) + 1;
+    }
+}
+
+function finishGame(winMessage) {
+    res.textContent = winMessage + ' on a streak of ' + streak;
+
+    for (let i = 0; i < btns.length - 1; i++)
         btns[i].disabled = true;
+    
+}
+
+function playAgain() {
+    for (let i = 0; i < btns.length - 1; i ++) {
+        btns[i].className = 'btn'
+        btns[i].textContent = ''
+        btns[i].disabled = false;
+        ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+        clickCount = 0;
+        preWinner = winner
+        winner = undefined;
+    }
 }

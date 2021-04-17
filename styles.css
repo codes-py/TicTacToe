@@ -6,9 +6,17 @@
     flex-direction: column;
     text-align: center;
     font-family: Consolas;
-    font-size: medium;
+    font-size: large;
     justify-content: space-around;
     background-color: rgba(137, 253, 253, 0.342);
+}
+
+.tttcontainer div {
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .tttrow {
@@ -17,10 +25,29 @@
     padding: 10px;
 }
 
-button {
+.btn, .btn-red, .btn-blue {
     height: 100px;
     width: 100px;
+    font-family: consolas;
+    font-size: xx-large;
     background-color: rgb(74, 90, 97);
+    color: #fff;
+}
+
+.btn-red {
+    background-color: red;
+}
+
+.btn-blue {
+    background-color: blue;
+}
+
+.btn-play {
+    background-color: blueviolet;
+    border-radius: 10px;
+    height: 60px;
+    font-family: consolas;
+    font-size: large;
     color: #fff;
 }
 
@@ -32,7 +59,13 @@ body {
     background-color: blanchedalmond;
 }
 
-table, th, td{
+table {
+    width: 50%;
+    margin: auto;
+}
+
+th, td{
     padding: 5px;
     border: 1px solid black;
+    text-align: center;
 }
