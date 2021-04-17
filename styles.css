@@ -1,0 +1,38 @@
+.tttcontainer {
+    border: 1px solid black;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: Consolas;
+    font-size: medium;
+    justify-content: space-around;
+    background-color: rgba(137, 253, 253, 0.342);
+}
+
+.tttrow {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(74, 90, 97);
+    color: #fff;
+}
+
+button:hover {
+    box-shadow: 1px 1px 5px black;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+table, th, td{
+    padding: 5px;
+    border: 1px solid black;
+}

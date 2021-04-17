@@ -1,0 +1,55 @@
+<!DOCTYPE html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ttt" class="tttcontainer">
+        <h2>Tic Tac Toe</h2>
+
+        <div id="row1" class="tttrow">
+            <button id="col1" onclick="buttonClick(this)"></button>
+            <button id="col2" onclick="buttonClick(this)"></button>
+            <button id="col3" onclick="buttonClick(this)"></button>
+        </div>
+        
+        <div id="row2" class="tttrow">
+            <button id="col1" onclick="buttonClick(this)"></button>
+            <button id="col2" onclick="buttonClick(this)"></button>
+            <button id="col3" onclick="buttonClick(this)"></button>
+        </div>
+
+        <div id="row3" class="tttrow">
+            <button id="col1" onclick="buttonClick(this)"></button>
+            <button id="col2" onclick="buttonClick(this)"></button>
+            <button id="col3" onclick="buttonClick(this)"></button>
+        </div>
+
+        <table>
+            <tr>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Draws</th>
+            </tr>
+            
+            <tr>
+                <td>Player 1</td>
+                <td><span>0</span></td>
+                <td><span>0</span></td>
+            </tr>
+            
+            <tr>
+                <td>Player 2</td>
+                <td><span>0</span></td>
+                <td><span>0</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
