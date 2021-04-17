@@ -1,22 +1,20 @@
 let ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-var clickCount = 0;
+let clickCount = 0, streak = 0;
 let winner, preWinner;
-const players = ['X', 'O'];
-const color = ['red', 'blue'];
-let streak = 0;
+
+const PLAYERS = ['X', 'O'], COLOR = ['red', 'blue'];
 
 let btns = document.getElementsByTagName('button');
 let p1 = document.getElementById('Player 1');
 let p2 = document.getElementById('Player 2');
-let container = document.getElementById('ttt');
 let res = document.getElementById('res');
 
 function buttonClick(btn) {
     let pos = [btn.parentElement.id[btn.parentElement.id.length - 1] - 1,
                 btn.id[btn.id.length - 1] - 1
             ];
-    ttt[pos[0]][pos[1]] = players[clickCount % 2];
-    btn.className = `btn-${color[clickCount % 2]}`;
+    ttt[pos[0]][pos[1]] = PLAYERS[clickCount % 2];
+    btn.className = `btn-${COLOR[clickCount % 2]}`;
     btn.append(ttt[pos[0]][pos[1]]);
     btn.disabled = true;
     clickCount++;
@@ -98,7 +96,8 @@ function playAgain() {
         btns[i].textContent = ''
         btns[i].disabled = false;
     }
-    ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    res.textContent = '';
+    ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
     clickCount = 0;
     preWinner = winner;
     winner = undefined;

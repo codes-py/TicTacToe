@@ -26,6 +26,10 @@
     padding: 10px;
 }
 
+button {
+    border-radius: 10px;
+}
+
 .btn, .btn-red, .btn-blue {
     height: 100px;
     width: 100px;
@@ -45,7 +49,6 @@
 
 .btn-play {
     background-color: blueviolet;
-    border-radius: 10px;
     height: 60px;
     font-family: consolas;
     font-size: large;
