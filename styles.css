@@ -12,18 +12,12 @@
     background-color: rgba(137, 253, 253, 0.342);
 }
 
-.tttcontainer div {
+.tttrow {
+    display: flex;
     padding: 10px;
     width: 50%;
     margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.tttrow {
-    display: flex;
     justify-content: space-around;
-    padding: 10px;
 }
 
 button {
