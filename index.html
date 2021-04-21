@@ -7,25 +7,28 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div id="ttt" class="tttcontainer">
+    <div class="container">
         <h1>Tic Tac Toe</h1>
 
-        <div id="row1" class="tttrow">
-            <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col3" onclick="buttonClick(this)"></button>
-        </div>
-        
-        <div id="row2" class="tttrow">
-            <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col3" onclick="buttonClick(this)"></button>
-        </div>
+        <div id="ttt" class="tttcontainer">
+            
+            <div id="row1" class="tttrow">
+                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            </div>
+            
+            <div id="row2" class="tttrow">
+                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            </div>
 
-        <div id="row3" class="tttrow">
-            <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-            <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            <div id="row3" class="tttrow">
+                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            </div>            
         </div>
 
         <table>
@@ -49,14 +52,15 @@
                 <td name="losses">0</td>
                 <td name="draws">0</td>
             </tr>
-
         </table>
 
         <div>
             <button class="btn-play" onclick="playAgain()">Play Again</button>
         </div>
+        
         <h2 id="res"></h2>
+
+        <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

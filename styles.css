@@ -1,33 +1,34 @@
-.tttcontainer {
+.container {
     border: 1px solid black;
     width: 50%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     text-align: center;
-    font-family: Consolas;
+    font-family: 'Courier New', Courier, monospace;
     font-size: large;
     justify-content: space-around;
     background-color: rgba(137, 253, 253, 0.342);
 }
 
-.tttrow {
+.tttcontainer {
     display: flex;
-    padding: 10px;
-    width: 50%;
-    margin: auto;
-    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
 }
 
-button {
-    border-radius: 10px;
+.tttrow {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
 }
 
 .btn, .btn-red, .btn-blue {
     height: 100px;
     width: 100px;
-    font-family: consolas;
+    font-family: 'Courier New', Courier, monospace;
     font-size: xx-large;
     background-color: rgb(74, 90, 97);
     color: #fff;
@@ -44,7 +45,8 @@ button {
 .btn-play {
     background-color: blueviolet;
     height: 60px;
-    font-family: consolas;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
     font-size: large;
     color: #fff;
 }
