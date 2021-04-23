@@ -3,7 +3,7 @@
     width: 50%;
     margin: auto;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: consolas;
     font-size: large;
     justify-content: space-around;
     background-color: rgba(137, 253, 253, 0.342);
@@ -14,20 +14,22 @@
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: consolas;
     font-size: large;
 }
 
 .tttrow {
     display: flex;
     width: 50%;
+    padding: 10px;
     margin: auto;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .btn, .btn-red, .btn-blue {
     height: 100px;
     width: 100px;
+    border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-size: xx-large;
     background-color: rgb(74, 90, 97);
@@ -46,7 +48,7 @@
     background-color: blueviolet;
     height: 60px;
     border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: consolas;
     font-size: large;
     color: #fff;
 }
