@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="styles.css">
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Tic Tac Toe</h1>
+    <div class="container container-xl">
+        <h1 class="">Tic Tac Toe</h1>
 
-        <div id="ttt" class="tttcontainer">
+        <div id="ttt" class="container container-fluid">
             
-            <div id="row1" class="tttrow">
-                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            <div id="row1">
+                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)"></button>
             </div>
             
-            <div id="row2" class="tttrow">
-                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            <div id="row2">
+                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)"></button>
             </div>
 
-            <div id="row3" class="tttrow">
-                <button class="btn" id="col1" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col2" onclick="buttonClick(this)"></button>
-                <button class="btn" id="col3" onclick="buttonClick(this)"></button>
+            <div id="row3">
+                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)"></button>
+                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)"></button>
             </div>            
         </div>
 
@@ -36,31 +37,33 @@
             <h3><span id="turn">X is playing...</span></h3>
         </div>
 
-        <table>
-            <tr>
+        <table class="table table-hover">
+            <thead class="">
                 <th>Player</th>
                 <th>Wins</th>
                 <th>Losses</th>
                 <th>Draws</th>
-            </tr>
+            </thead>
             
-            <tr id="Player 1">
-                <td>1</td>
-                <td name="wins">0</td>
-                <td name="losses">0</td>
-                <td name="draws">0</td>
-            </tr>
-            
-            <tr id="Player 2">
-                <td>2</td>
-                <td name="wins">0</td>
-                <td name="losses">0</td>
-                <td name="draws">0</td>
-            </tr>
+            <tbody>
+                <tr id="Player 1">
+                    <td>1</td>
+                    <td name="wins">0</td>
+                    <td name="losses">0</td>
+                    <td name="draws">0</td>
+                </tr>
+                
+                <tr id="Player 2">
+                    <td>2</td>
+                    <td name="wins">0</td>
+                    <td name="losses">0</td>
+                    <td name="draws">0</td>
+                </tr>
+            </tbody>
         </table>
 
         <div>
-            <button class="btn-play" onclick="playAgain()">Play Again</button>
+            <button class="btn btn-warning" onclick="playAgain()">Play Again</button>
         </div>
         
         <h2 id="res"></h2>

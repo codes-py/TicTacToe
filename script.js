@@ -2,7 +2,7 @@ let ttt = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let clickCount = 0, streak = 0;
 let winner, preWinner;
 
-const PLAYERS = ['X', 'O'], COLOR = ['red', 'blue'];
+const PLAYERS = ['X', 'O'], COLOR = ['danger', 'primary'];
 
 let btns = document.getElementsByTagName('button');
 let p1 = document.getElementById('Player 1');
@@ -15,7 +15,7 @@ function buttonClick(btn) {
                 btn.id[btn.id.length - 1] - 1
             ];
     ttt[pos[0]][pos[1]] = PLAYERS[clickCount % 2];
-    btn.className = `btn-${COLOR[clickCount % 2]}`;
+    btn.className = `btn-lg btn-${COLOR[clickCount % 2]}`;
     btn.append(ttt[pos[0]][pos[1]]);
     btn.disabled = true;
     clickCount++;
@@ -95,7 +95,7 @@ function finishGame(winMessage) {
 
 function playAgain() {
     for (let i = 0; i < btns.length - 1; i ++) {
-        btns[i].className = 'btn'
+        btns[i].className = 'btn btn-secondary'
         btns[i].textContent = ''
         btns[i].disabled = false;
     }
