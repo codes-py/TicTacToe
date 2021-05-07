@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-button {
+#col1, #col2, #col3 {
     min-width: 100px;
     min-height: 100px;
     margin: 10px;

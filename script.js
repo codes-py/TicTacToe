@@ -9,6 +9,12 @@ let p1 = document.getElementById('Player 1');
 let p2 = document.getElementById('Player 2');
 let res = document.getElementById('res');
 let turn = document.getElementById('turn');
+let again = document.getElementById('again')
+
+function starter() {
+    playAgain();
+    document.getElementById('start').style.display = 'none';
+}
 
 function buttonClick(btn) {
     let pos = [btn.parentElement.id[btn.parentElement.id.length - 1] - 1,
@@ -88,7 +94,7 @@ function updateScores() {
 function finishGame(winMessage) {
     res.textContent = winMessage + ' on a streak of ' + streak;
     turn.textContent = 'Want to play again?';
-
+    again.style.display = '';
     for (let i = 0; i < btns.length - 1; i++)
         btns[i].disabled = true;
 }
@@ -105,4 +111,5 @@ function playAgain() {
     turn.textContent = PLAYERS[clickCount  % 2] + ' is playing...';
     preWinner = winner;
     winner = undefined;
+    again.style.display = 'none';
 }
