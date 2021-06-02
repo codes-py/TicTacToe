@@ -1,76 +1,131 @@
 <!DOCTYPE html> 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Tic Tac Toe</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container container-xl">
-        <h1 class="h1">Tic Tac Toe</h1>
-        
-        <hr>
-        <h3 id="roundIndicator" style="display: none;">Round : <span id="matchCount">0</span></h3>
-        
-        <div id="ttt" class="container container-fluid">
-            
-            <div id="row1">
-                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)" disabled></button>
-            </div>
-            
-            <div id="row2">
-                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)" disabled></button>
-            </div>
+      <h1 class="h1">Tic Tac Toe</h1>
 
-            <div id="row3">
-                <button class="btn-secondary btn" id="col1" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col2" onclick="buttonClick(this)" disabled></button>
-                <button class="btn-secondary btn" id="col3" onclick="buttonClick(this)" disabled></button>
-            </div>            
+      <hr />
+      <h3 id="roundIndicator" style="display: none">
+        Round : <span id="matchCount">0</span>
+      </h3>
+
+      <div id="ttt" class="container container-fluid">
+        <div id="row1">
+          <button
+            class="btn-secondary btn"
+            id="col1"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col2"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col3"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
         </div>
 
-        <div>
-            <h2 id="res" class="h2"></h2>
-            <h3><span id="turn"></span></h3>
-            <button id="start" class="btn btn-success" onclick="play()">Play</button>
-            <button id="again" class="btn btn-warning" style="display: none;" onclick="playAgain()">Play Again</button>
+        <div id="row2">
+          <button
+            class="btn-secondary btn"
+            id="col1"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col2"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col3"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
         </div>
 
-        <br>
+        <div id="row3">
+          <button
+            class="btn-secondary btn"
+            id="col1"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col2"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+          <button
+            class="btn-secondary btn"
+            id="col3"
+            onclick="buttonClick(this)"
+            disabled
+          ></button>
+        </div>
+      </div>
 
-        <table class="table table-striped">
-            <thead class="table-dark">
-                <th>Player</th>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Draws</th>
-            </thead>
-            
-            <tbody>
-                <tr id="Red">
-                    <td>RED</td>
-                    <td name="wins">0</td>
-                    <td name="losses">0</td>
-                    <td name="draws">0</td>
-                </tr>
-                
-                <tr id="Blue">
-                    <td>BLUE</td>
-                    <td name="wins">0</td>
-                    <td name="losses">0</td>
-                    <td name="draws">0</td>
-                </tr>
-            </tbody>
-        </table>
-      
-        <script src="script.js"></script>
+      <div>
+        <h2 id="res" class="h2"></h2>
+        <h3><span id="turn"></span></h3>
+        <button id="start" class="btn btn-success" onclick="play()">
+          Play
+        </button>
+        <button
+          id="again"
+          class="btn btn-warning"
+          style="display: none"
+          onclick="playAgain()"
+        >
+          Play Again
+        </button>
+      </div>
+
+      <br />
+
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <th>Player</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Draws</th>
+        </thead>
+
+        <tbody>
+          <tr id="Red">
+            <td>RED</td>
+            <td name="wins">0</td>
+            <td name="losses">0</td>
+            <td name="draws">0</td>
+          </tr>
+
+          <tr id="Blue">
+            <td>BLUE</td>
+            <td name="wins">0</td>
+            <td name="losses">0</td>
+            <td name="draws">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script src="script.js"></script>
     </div>
-</body>
+  </body>
 </html>
