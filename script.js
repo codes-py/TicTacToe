@@ -1,8 +1,25 @@
 let ttt;
 let clickCount;
-let winner, preWinner;
-let matchCount = -1,
-  streak = 0;
+let winner;
+
+let scores = JSON.parse(localStorage.getItem("scores"));
+if (!scores) {
+  scores = {
+    "red": {
+      "wins": 0,
+      "losses": 0,
+      "draws": 0
+    },
+    "blue": {
+      "wins": 0,
+      "losses": 0,
+      "draws": 0
+    },
+    "preWinner": undefined,
+    "streak": 0,
+    "matchCount": 0
+  }
+}
 
 const PLAYERS = ["X", "O"],
   CSS = ["danger", "primary"],
@@ -15,6 +32,14 @@ let res = document.getElementById("res");
 let turn = document.getElementById("turn");
 let again = document.getElementById("again");
 let match = document.getElementById("matchCount");
+match.textContent = scores[matchCount];
+
+p1.children.wins.textContent = scores["red"]["wins"];
+p1.children.losses.textContent = scores["red"]["losses"];
+p1.children.draws.textContent = scores["red"]["draws"];
+p2.children.wins.textContent = scores["blue"]["wins"];
+p2.children.losses.textContent = scores["blue"]["losses"];
+p2.children.draws.textContent = scores["blue"]["draws"];
 
 function play() {
   playAgain();
@@ -62,7 +87,7 @@ function decideWinner() {
       else if (ttt[1][1] === PLAYERS[1]) return "Blue";
   }
 
-  if (clickCount === 9 + (matchCount % 2)) {
+  if (clickCount === 9 + (scores["matchCount"] % 2)) {
     winner = undefined;
     updateScores();
     finishGame("Game Draw");
@@ -70,45 +95,47 @@ function decideWinner() {
 }
 
 function updateScores() {
-  if (preWinner === winner) streak += 1;
-  else streak = 1;
+  if (scores["preWinner"] === winner) scores["streak"] += 1;
+  else scores["streak"] = 1;
 
   if (winner === "Red") {
-    p1.children.wins.textContent = Number(p1.children.wins.textContent) + 1;
-    p2.children.losses.textContent = Number(p2.children.losses.textContent) + 1;
+    p1.children.wins.textContent = ++scores["red"]["wins"]; // Number(p1.children.wins.textContent) + 1;
+    p2.children.losses.textContent = ++scores["blue"]["losses"]; // Number(p2.children.losses.textContent) + 1;
   } else if (winner === "Blue") {
-    p2.children.wins.textContent = Number(p2.children.wins.textContent) + 1;
-    p1.children.losses.textContent = Number(p1.children.losses.textContent) + 1;
+    p2.children.wins.textContent = ++scores["blue"]["wins"]; // Number(p2.children.wins.textContent) + 1;
+    p1.children.losses.textContent = ++scores["red"]["losses"]; // Number(p1.children.losses.textContent) + 1;
   } else {
-    p1.children.draws.textContent = Number(p1.children.draws.textContent) + 1;
-    p2.children.draws.textContent = Number(p2.children.draws.textContent) + 1;
+    p1.children.draws.textContent = ++scores["red"]["draws"]; // Number(p1.children.draws.textContent) + 1;
+    p2.children.draws.textContent = ++scores["blue"]["draws"]; // Number(p2.children.draws.textContent) + 1;
   }
 }
 
 function finishGame(winMessage) {
-  res.textContent = winMessage + " on a streak of " + streak;
+  res.textContent = winMessage + " on a streak of " + scores["streak"];
   turn.textContent = "Want to play again?";
   again.style.display = "";
   for (let i = 0; i < btns.length - 1; i++) btns[i].disabled = true;
+
+  scores["preWinner"] = winner;
+  winner = undefined;
+  localStorage.setItem("scores", JSON.stringify(scores));
 }
 
 function playAgain() {
-  matchCount += 1;
+  scores["matchCount"]++;
   for (let i = 0; i < btns.length - 1; i++) {
     btns[i].className = "btn btn-secondary";
     btns[i].textContent = "";
     btns[i].disabled = false;
   }
-  match.textContent = matchCount + 1;
+  match.textContent = scores["matchCount"]; // +1
   res.textContent = "";
   ttt = [
     [0, 0, 0],
     [0, 0, 0],
     [0, 0, 0],
   ];
-  clickCount = 0 + (matchCount % 2);
+  clickCount = 0 + (scores["matchCount"] % 2);
   turn.textContent = PLCOLOR[clickCount % 2] + " is playing...";
-  preWinner = winner;
-  winner = undefined;
   again.style.display = "none";
 }
